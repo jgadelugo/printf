@@ -15,22 +15,22 @@ int _printf(const char *format, ...)
 	double totalBuffer = 0;
 	double *total = &totalBuffer;
 	char *holder;
-	char buffer[BUFFSIZE];
+	char buffer[BUFSIZE];
 	char *(*spec_func)(va_list) = NULL;
 
 	va_start(valist, format);
 
 	/*initialize buffer */
-	for (i = 0; i < BUFFSIZE; i++)
+	for (i = 0; i < BUFSIZE; i++)
 		buffer[i] = 0;
 	/*check format and select arg*/
-	for (i = 0; format & format[i]; i++)
+	for (i = 0; format && format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
 			i++;
 			spec_func = get_spec_func(format[i]);
-			if (specfunc)
+			if (spec_func)
 				holder = spec_func(valist);
 			else
 				holder = nothing_found(format[i]);
