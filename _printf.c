@@ -18,6 +18,8 @@ int _printf(const char *format, ...)
 	char buffer[BUFSIZE];
 	char *(*spec_func)(va_list) = NULL;
 
+	if (!format)
+		return (-1);
 	va_start(valist, format);
 
 	/*initialize buffer */
