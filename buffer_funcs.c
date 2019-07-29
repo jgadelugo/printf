@@ -26,29 +26,29 @@ char *_memcpy(char *dest, char *src, unsigned int n, unsigned int bufferlen)
  * @hold: string to allocate into buffer
  * @hlen: hold length
  * @buffer: buffer char array
- * @bufend: end of buffer
+ * @size: end of buffer
  * @total: pointer to total character counter
  * Return: buffer length
  */
 
-int alloc_buffer(char *hold, int hlen, char *buffer, int bufend, double *total)
+int alloc_buffer(char *hold, int hlen, char *buffer, int size, double *total)
 {
 	int sizecpy = 0;
 
-	if (hlen + bufend > BUFSIZE)
+	if (hlen + size > BUFSIZE)
 	{
-		sizecpy = BUFSIZE - bufend;
-		_memcpy(buffer, hold, sizecpy, bufend);
+		sizecpy = BUFSIZE - size;
+		_memcpy(buffer, hold, sizecpy, size);
 		_puts(buffer, BUFSIZE);
 		hold += sizecpy;
 		_memcpy(buffer, hold, hlen - sizecpy, 0);
-		bufend = hlen - sizecpy;
+		size = hlen - sizecpy;
 		*total += BUFSIZE;
 	}
 	else
 	{
-		_memcpy(buffer, hold, hlen, bufend);
-		bufend += hlen;
+		_memcpy(buffer, hold, hlen, size);
+		size += hlen;
 	}
-	return (bufend);
+	return (size);
 }
