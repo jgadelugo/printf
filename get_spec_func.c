@@ -17,13 +17,13 @@ char *(*get_spec_func(char s))(va_list)
 		{"d", int_find},
 		{"i", int_find},
 		{"u", unsigned_find},
-		{"o", octal_find},
-		{"r", rev_find},
+/**		{"o", octal_find},
+ */		{"r", rev_find},
 		{"R", rot13_find},
 		{NULL, NULL}
 	};
 
-	for (i = 0; spec_types[i]; i++)
+	for (i = 0; spec_types[i].spec; i++)
 		if (s == *spec_types[i].spec)
 			return (spec_types[i].f);
 
