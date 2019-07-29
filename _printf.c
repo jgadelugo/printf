@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stddef.h>
+#include <stdio.h>
 
 
 /**
@@ -11,9 +12,9 @@
 int _printf(const char *format, ...)
 {
 	va_list valist;
-	int i, buffend, hlen = 0;
+	int i, buffend = 0, hlen = 0;
 	double totalBuffer = 0;
-	double *total = &totalBuffer;
+	double *total;
 	char *holder;
 	char buffer[BUFSIZE];
 	char *(*spec_func)(va_list) = NULL;
@@ -21,7 +22,7 @@ int _printf(const char *format, ...)
 	if (!format)
 		return (-1);
 	va_start(valist, format);
-
+	total = &totalBuffer;
 	/*initialize buffer */
 	for (i = 0; i < BUFSIZE; i++)
 		buffer[i] = 0;
@@ -32,10 +33,10 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			spec_func = get_spec_func(format[i]);
-			if (spec_func)
-				holder = spec_func(valist);
-			else
+			if (spec_func == NULL)
 				holder = nothing_found(format[i]);
+			else
+				holder = spec_func(valist);
 			hlen = _strlen(holder);
 			buffend = alloc_buffer(holder, hlen, buffer, buffend, total);
 		}
