@@ -18,7 +18,7 @@ typedef struct spec_types
 char *(*get_spec_func(char s))(va_list);
 int _printf(const char *format, ...);
 char *char_find(va_list c);
-char *string_find(va_list *s);
+char *string_find(va_list s);
 char *percent_find(void);
 char *int_find(va_list npoint);
 char *unsigned_find(va_list unsign);

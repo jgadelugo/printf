@@ -23,7 +23,7 @@ char *char_find(va_list c)
  * @s: string
  * Return: "string"
  */
-char *string_find(va_list *s)
+char *string_find(va_list s)
 {
 	char *string;
 
