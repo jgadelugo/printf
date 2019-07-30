@@ -65,6 +65,13 @@ The \fIchar *\fR argument is expected to be a pointer to an unsigned int
 argument, and the unsigned int argument is then converted to binary.
 .LP
 .TP
+.B x, X
+The \fIchar *\fR argument pointer is expected to be an integer, and the
+integer argument is then converted to hexadecimal.
+.LP
+.TP
+.B p
+The *\fIchar *\fR argument pointer returns an address.
 .RE
 .SH AUTHOR
 Brandyn Reindel &
