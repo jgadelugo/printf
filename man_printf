@@ -59,6 +59,12 @@ The \fIchar *\fR argument is expected to be a pointer to an array of
 character type. Characters from the array are then
 converted to Rot13 (rotated 13 characters forward in the alphabet).
 .LP
+.TP
+.B b
+The \fIchar *\fR argument is expected to be a pointer to an unsigned int
+argument, and the unsigned int argument is then converted to binary.
+.LP
+.TP
 .RE
 .SH AUTHOR
 Brandyn Reindel &
