@@ -17,7 +17,7 @@ char *rot13_find(va_list s)
 
 	arg = va_arg(s, char *);
 	if (!arg)
-		return (NULL);
+		return ("");
 	len = _strlen(arg);
 	rot = malloc((len + 1) * sizeof(char));
 	for (i = 0; i < len; i++)
@@ -50,7 +50,7 @@ char *rev_find(va_list s)
 
 	arg = va_arg(s, char *);
 	if (!arg)
-		return (NULL);
+		return ("");
 	len = _strlen(arg);
 	rev = malloc((len + 1) * sizeof(char));
 
