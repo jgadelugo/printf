@@ -68,6 +68,8 @@ char *int_find(va_list npoint)
 		count++;
 	}
 	string = malloc((count + 1) * sizeof(char));
+	if (string == NULL)
+		return (NULL);
 	if (n < 0)
 		string[i++] = '-';
 	while (expo >= 1)
