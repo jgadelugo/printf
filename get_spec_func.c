@@ -17,8 +17,8 @@ char *(*get_spec_func(char s))(va_list)
 		{"d", int_find},
 		{"i", int_find},
 		{"u", unsigned_find},
-/**		{"o", octal_find},
- */		{"r", rev_find},
+		{"o", octal_find},
+		{"r", rev_find},
 		{"R", rot13_find},
 		{"b", binary_find},
 		{NULL, NULL}
