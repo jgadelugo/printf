@@ -19,8 +19,8 @@ char *(*get_spec_func(char s))(va_list)
 		{"u", unsigned_find},
 /**		{"o", octal_find},
 		{"r", rev_find},
-		{"R", rot13_find},
-*/		{NULL, NULL}
+*/		{"R", rot13_find},
+		{NULL, NULL}
 	};
 
 	for (i = 0; spec_types[i].spec; i++)
