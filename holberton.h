@@ -15,6 +15,7 @@ typedef struct spec_types
 	char *(*f)();
 } s_types;
 
+
 char *(*get_spec_func(char s))(va_list);
 int _printf(const char *format, ...);
 char *char_find(va_list c);
@@ -30,5 +31,6 @@ char *_memcpy(char *dest, char *src, unsigned int n, unsigned int bufferlen);
 int alloc_buffer(char *hold, int hlen, char *buffer, int size, double *total);
 char *rev_find(va_list s);
 char *rot13_find(va_list s);
+char *binary_find(va_list n);
 /**char *octal_find(va_list n) */
 #endif /*PRINTF_H*/

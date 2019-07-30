@@ -20,6 +20,7 @@ char *(*get_spec_func(char s))(va_list)
 /**		{"o", octal_find},
  */		{"r", rev_find},
 		{"R", rot13_find},
+		{"b", binary_find},
 		{NULL, NULL}
 	};
 
