@@ -98,6 +98,8 @@ char *unsigned_find(va_list unsign)
 		count++;
 	}
 	string = malloc((count + 1) * sizeof(char));
+	if (string == NULL)
+		return (NULL);
 	while (expo >= 1)
 	{
 		string[i++] = (((res / expo) % 10) + '0');
