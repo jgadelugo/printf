@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -21,7 +22,7 @@ char *rot13_find(va_list s)
 	len = _strlen(arg);
 	rot = malloc((len + 1) * sizeof(char));
 	if (rot == NULL)
-		return(NULL);
+		return (NULL);
 	for (i = 0; i < len; i++)
 		for (x = 0; x < 2; x++)
 		{
@@ -84,4 +85,37 @@ char *binary_find(va_list n)
 	for (j = 0, i -= 1; i >= 0; i--, j++)
 		binaryString[j] = (binaryNum[i] + '0');
 	return (binaryString);
+}
+
+/**
+ * octal_find - converts decimal to octal numbers
+ * @n: octal number to print
+ * Return: pointer to string
+ */
+
+char *octal_find(va_list n)
+{
+	unsigned long int pos, temp, result, oct, i;
+	char *string;
+
+	oct = va_arg(n, unsigned long int);
+	result = i = 0;
+	pos = 1;
+	while (oct)
+	{
+		result += (oct % 8) * pos;
+		oct /= 8;
+		pos *= 10;
+		i++;
+	}
+	temp = i;
+	pos /= 10;
+	string = malloc(temp * sizeof(char) + 1);
+	for (i = 0 ; i < temp; i++)
+	{
+		string[i] = ((result / pos) % 10) + '0';
+		pos /= 10;
+	}
+	string[i] = '\0';
+	return (string);
 }
