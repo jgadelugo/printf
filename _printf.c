@@ -12,7 +12,7 @@
 int _printf(const char *format, ...)
 {
 	va_list valist;
-	int i, buffend = 0, hlen = 0;
+	int i, buffend = 0;
 	double totalBuffer = 0;
 	double *total;
 	char *holder;
@@ -23,22 +23,17 @@ int _printf(const char *format, ...)
 		return (-1);
 	va_start(valist, format);
 	total = &totalBuffer;
-	/*initialize buffer */
 	for (i = 0; i < BUFSIZE; i++)
 		buffer[i] = 0;
-	/*check format and select arg*/
 	for (i = 0; format && format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
 			i++;
 			spec_func = get_spec_func(format[i]);
-			if (spec_func == NULL)
-				holder = nothing_found(format[i]);
-			else
-				holder = spec_func(valist);
-			hlen = _strlen(holder);
-			buffend = alloc_buffer(holder, hlen, buffer, buffend, total);
+			holder = (spec_func) ? spec_func(valist) : nothing_found(format[i]);
+			if (holder)
+				buffend = alloc_buffer(holder, _strlen(holder), buffer, buffend, total);
 		}
 		else
 		{
