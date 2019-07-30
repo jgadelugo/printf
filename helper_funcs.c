@@ -67,7 +67,7 @@ void _puts(char *buffer, int size)
  *Return: concatenated string
  */
 
- char *rev_string(char *a, int n)
+char *rev_string(char *a, int n)
 {
 	char *begin = a;
 	char *end;
