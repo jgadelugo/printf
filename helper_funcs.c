@@ -59,3 +59,26 @@ void _puts(char *buffer, int size)
 {
 	write(1, buffer, size);
 }
+
+/**
+ *rev_string - reverse the contents of an array of integers
+ *@a: int array to reverse
+ *@n:number of elements in the array
+ *Return: concatenated string
+ */
+
+ char *rev_string(char *a, int n)
+{
+	int *begin = a;
+	int *end;
+	int hold = 0;
+
+	end = a + n - 1;
+	for (; begin < end; begin++, end--)
+	{
+		hold = *end;
+		*end = *begin;
+		*begin = hold;
+	}
+	return (a)
+}
