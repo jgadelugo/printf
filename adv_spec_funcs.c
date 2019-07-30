@@ -63,10 +63,11 @@ char *rev_find(va_list s)
 	rev[i] = '\0';
 	return (rev);
 }
+
 /**
- * rev_find - reverse a string
- * @s: input string
- * Return: reversed string
+ * binary_find - converts a string to binary
+ * @n: input string
+ * Return: binary string
  */
 char *binary_find(va_list n)
 {
