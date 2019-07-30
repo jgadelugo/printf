@@ -69,9 +69,9 @@ void _puts(char *buffer, int size)
 
  char *rev_string(char *a, int n)
 {
-	int *begin = a;
-	int *end;
-	int hold = 0;
+	char *begin = a;
+	char *end;
+	char hold;
 
 	end = a + n - 1;
 	for (; begin < end; begin++, end--)
@@ -80,5 +80,5 @@ void _puts(char *buffer, int size)
 		*end = *begin;
 		*begin = hold;
 	}
-	return (a)
+	return (a);
 }
