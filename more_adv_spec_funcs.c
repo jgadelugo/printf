@@ -11,9 +11,9 @@
 char *hex_find(va_list n)
 {
 	char *hexaDeciNum;
-	int i, temp, arg, hold, size;
+	unsigned int i, temp, arg, hold, size;
 
-	arg = va_arg(n, int);
+	arg = va_arg(n, unsigned int);
 
 	for (hold = arg, size = 0; hold; hold /= 16)
 		size++;
@@ -39,9 +39,9 @@ char *hex_find(va_list n)
 char *HEX_find(va_list n)
 {
 	char *hexaDeciNum;
-	int i, temp, arg, hold, size;
+	unsigned int i, temp, arg, hold, size;
 
-	arg = va_arg(n, int);
+	arg = va_arg(n, unsigned int);
 
 	for (hold = arg, size = 0; hold; hold /= 16)
 		size++;
@@ -67,24 +67,24 @@ char *HEX_find(va_list n)
 char *address_find(va_list n)
 {
 	char *address;
-	int i, temp, arg, hold, size;
+	unsigned long int i, temp, arg, hold, size;
 
-	arg = va_arg(n, int);
+	arg = va_arg(n, unsigned long int);
 
 	for (hold = arg, size = 0; hold; hold /= 16)
 		size++;
 	address = malloc((size + 3) * sizeof(char));
 	if (address == NULL)
 		return (NULL);
-	address[0] = '0';
-	address[1] = 'x';
-	for (i = 2; arg; arg /= 16, i++)
+	for (i = 0; arg; arg /= 16, i++)
 	{
 		temp = arg % 16;
 		if (temp < 10)
 			address[i] = (temp + '0');
 		else
-			address[i] = (temp + 'A' - 10);
+			address[i] = (temp + 'a' - 10);
 	}
+	address[i++] = 'x';
+	address[i] = '0';
 	return (rev_string(address, _strlen(address)));
 }
