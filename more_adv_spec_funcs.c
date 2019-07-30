@@ -18,6 +18,8 @@ char *hex_find(va_list n)
 	for (hold = arg, size = 0; hold; hold /= 16)
 		size++;
 	hexaDeciNum = malloc((size + 1) * sizeof(char));
+	for (hexaDeciNum == NULL)
+		return (NULL);
 	for (i = 0; arg; arg /= 16, i++)
 	{
 		temp = arg % 16;
@@ -44,6 +46,8 @@ char *HEX_find(va_list n)
 	for (hold = arg, size = 0; hold; hold /= 16)
 		size++;
 	hexaDeciNum = malloc((size + 1) * sizeof(char));
+	for (hexaDeciNum == NULL)
+		return (NULL);
 	for (i = 0; arg; arg /= 16, i++)
 	{
 		temp = arg % 16;
