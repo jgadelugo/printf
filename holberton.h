@@ -32,5 +32,5 @@ int alloc_buffer(char *hold, int hlen, char *buffer, int size, double *total);
 char *rev_find(va_list s);
 char *rot13_find(va_list s);
 char *binary_find(va_list n);
-/**char *octal_find(va_list n) */
+char *octal_find(va_list n);
 #endif /*PRINTF_H*/
