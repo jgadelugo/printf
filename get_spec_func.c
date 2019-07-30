@@ -23,6 +23,7 @@ char *(*get_spec_func(char s))(va_list)
 		{"b", binary_find},
 		{"x", hex_find},
 		{"X", HEX_find},
+		{"p", address_find},
 		{NULL, NULL}
 	};
 

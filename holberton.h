@@ -35,6 +35,7 @@ char *binary_find(va_list n);
 char *octal_find(va_list n);
 char *hex_find(va_list n);
 char *HEX_find(va_list n);
+char *address_find(va_list n);
 char *rev_string(char *a, int n);
 
 #endif /*PRINTF_H*/
