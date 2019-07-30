@@ -111,6 +111,8 @@ char *octal_find(va_list n)
 	temp = i;
 	pos /= 10;
 	string = malloc(temp * sizeof(char) + 1);
+	if (string == NULL)
+		return (NULL);
 	for (i = 0 ; i < temp; i++)
 	{
 		string[i] = ((result / pos) % 10) + '0';
