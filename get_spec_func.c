@@ -21,6 +21,8 @@ char *(*get_spec_func(char s))(va_list)
 		{"r", rev_find},
 		{"R", rot13_find},
 		{"b", binary_find},
+		{"x", hex_find},
+		{"X", HEX_find},
 		{NULL, NULL}
 	};
 
